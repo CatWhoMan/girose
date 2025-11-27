@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Pixel Art</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Vidéo d'intro avec fenêtre stylisée -->
+        <div id="video-intro" class="active">
+            <video id="intro-video" autoplay muted loop>
+                <source src="bg7.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+            
+            <!-- Fenêtre d'intro stylisée -->
+            <div id="click-to-start">
+                <div class="intro-window">
+                    <!-- En-tête de la fenêtre 
+                    <div class="window-header">
+                        <div class="window-title"></div>
+                    </div>-->
+                    
+                        <!-- Corps de la fenêtre -->
+                        <div class="window-body">
+                            <!-- Zone image -->
+                            <div class="intro-image-container">
+                                <div class="pixel-mountain">
+                                    <img src="logo.png" alt="Montagne" class="mountain-image">
+                                </div>
+                            </div>
+                            
+                            <!-- Texte d'accueil -->
+                            <div class="intro-text">
+                                <h1 class="game-title">SIMULATION</h1>
+                                <p class="subtitle">Glacier de la Girose</p>
+                               <!-- <p class="description">
+                                    Une expérience interactive sur l'équilibre fragile entre développement et préservation
+                                </p>-->
+                            </div>
+                            
+                            <!-- Bouton start -->
+                            <button class="start-button">
+                                <span class="button-text">▶ COMMENCER</span>
+                                <span class="button-hint"></span>
+                            </button>
+                        </div>
+                    
+                    <!-- Pied de la fenêtre
+                    <div class="window-footer">
+                        <span class="version">v1.0</span>
+                        <span class="separator">|</span>
+                        <span class="info">Utilisez les pinceaux pour créer</span>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- La page d'accueil avec les dialogues -->
+        <div id="intro-overlay">
+            <div id="dialog-box">
+                <div id="dialog-content">
+                    <p id="dialog-text"></p>
+                </div>
+                <button id="next-btn" class="pixel-btn">
+                    <span>SUIVANT</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Vidéo de fond pour le jeu -->
+        <video id="game-background-video" autoplay muted loop playsinline>
+            <source src="bg6.mp4" type="video/mp4">
+        </video>
+
+        <!-- Container pour votre jeu p5.js -->
+        <div id="p5-canvas-container"></div>
+
+        <!-- Audio de fond -->
+        <audio id="background-music" autoplay loop>
+            <source src="intro2.mp3" type="audio/mp3">
+            Votre navigateur est nul désolé vous n'aurez pas de musique
+        </audio>
+
+        <!-- Audio de fin -->
+        <audio id="end-music" loop>
+            <source src="fin.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- Charger p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <!-- Votre script de jeu p5.js -->
+    <script src="sketch.js"></script>
+    <!-- Script de la page d'accueil -->
+    <script src="script.js"></script>
+</body>
+</html>
